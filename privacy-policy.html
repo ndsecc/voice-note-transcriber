@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy · Voice Note Transcriber</title>
+    <style>
+      :root { color-scheme: light dark; --text: #1b1c24; --muted: #5d6075; --line: #e4e4ee; --bg: #fff; --accent: #5b4fe6; }
+      @media (prefers-color-scheme: dark) { :root { --text: #ecedf5; --muted: #a0a2b8; --line: #2e3042; --bg: #13141b; --accent: #8a80ff; } }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+      main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+      h1 { font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+      h2 { font-size: 20px; margin: 36px 0 8px; }
+      .muted { color: var(--muted); }
+      a { color: var(--accent); }
+      table { width: 100%; border-collapse: collapse; font-size: 14.5px; display: block; overflow-x: auto; }
+      th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); min-width: 120px; }
+      th { font-weight: 650; }
+      li { margin: 4px 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy</h1>
+      <p class="muted">Voice Note Transcriber for WhatsApp Web · Effective 1 November 2026</p>
+      <p>Voice Note Transcriber ("the extension") turns WhatsApp Web voice messages into text. This policy explains what data the extension handles, where it goes and how you control it.</p>
+
+      <h2>The short version</h2>
+      <ul>
+        <li>The extension has no servers and no accounts. We, the developer, never receive your data.</li>
+        <li>Voice message audio is sent only to the speech-to-text provider <strong>you</strong> choose, with <strong>your</strong> API key, only to transcribe it.</li>
+        <li>Transcripts, settings and your API key are stored only in your browser.</li>
+        <li>No analytics, tracking, advertising or sale of data.</li>
+      </ul>
+
+      <h2>Data the extension handles</h2>
+      <table>
+        <thead><tr><th>Data</th><th>Why</th><th>Where it goes</th><th>How long</th></tr></thead>
+        <tbody>
+          <tr><td>Audio of WhatsApp voice messages</td><td>To transcribe them</td><td>Your browser, then your chosen provider (Groq, OpenAI, or a server you configure) over HTTPS</td><td>Not stored by the extension. The provider's own retention rules apply.</td></tr>
+          <tr><td>Transcripts and their context (chat name, sender name, time, duration, detected language)</td><td>To show transcripts in the chat and avoid transcribing the same message twice</td><td>Stored locally in your browser (<code>chrome.storage.local</code>)</td><td>Until you delete them; the oldest are removed automatically after 3,000 transcripts</td></tr>
+          <tr><td>A fingerprint (SHA-256 hash) of each transcribed audio file</td><td>To recognise forwarded copies and not transcribe them twice</td><td>Stored locally in your browser</td><td>Same as transcripts</td></tr>
+          <tr><td>Your settings and your API key</td><td>To work the way you configured it</td><td>Stored locally in your browser</td><td>Until you remove the extension or change them</td></tr>
+          <tr><td>The open WhatsApp chat (text, senders, times)</td><td>Only when you use "Copy chat for AI", the export buttons, or <code>window.vnt.getChat()</code>, to build the export you asked for</td><td>Your clipboard or a file you download</td><td>Not stored by the extension</td></tr>
+        </tbody>
+      </table>
+      <p>The extension reads WhatsApp Web only in the tab where it runs, only to detect voice messages, transcribe them and build exports you request. It does not read other websites.</p>
+
+      <h2>Third parties</h2>
+      <p>Audio is sent to exactly one provider, the one you select in Settings:</p>
+      <ul>
+        <li><strong>Groq</strong>: <a href="https://groq.com/privacy-policy">groq.com/privacy-policy</a></li>
+        <li><strong>OpenAI</strong>: <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
+        <li><strong>A custom endpoint</strong> you configure, for example your own Whisper server</li>
+      </ul>
+      <p>You hold the account with that provider, and their terms and privacy policy apply to the audio they receive. The extension sends nothing anywhere else.</p>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li><strong>Turn off automatic transcription</strong> in Settings to transcribe only when you click.</li>
+        <li><strong>Delete all transcripts</strong> in Settings → Your data.</li>
+        <li><strong>Export your transcripts</strong> as Markdown or JSON in Settings → Your data.</li>
+        <li><strong>Remove the extension</strong> to delete everything it stored.</li>
+      </ul>
+
+      <h2>Played status in WhatsApp</h2>
+      <p>To read a voice message's audio, the extension plays it silently in WhatsApp Web. WhatsApp therefore shows the message as played to its sender, just as when you listen to it yourself.</p>
+
+      <h2>Children</h2>
+      <p>The extension is not directed at children under 13 and does not knowingly handle their data.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+
+      <h2>Contact</h2>
+      <p>Voice Note Transcriber is made by <a href="https://nextdoorsec.com">NextdoorSEC</a>. Questions about this policy: <a href="mailto:info@nextdoorsec.com">info@nextdoorsec.com</a></p>
+
+      <p class="muted"><em>Voice Note Transcriber is not affiliated with, endorsed by or sponsored by WhatsApp or Meta.</em></p>
+    </main>
+  </body>
+</html>
